@@ -1,7 +1,9 @@
+const { emitMutation } = require('../../server');
+
 const createMovementAggregation = async (request, h) => {
 	const { payload } = request;
 
-	// TODO engage socket
+	emitMutation(payload);
 
 	return payload;
 };

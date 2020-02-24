@@ -68,10 +68,18 @@ io.on('connection', socket => {
 			person_b: [4,5,6]
 		});
 	});
-	socket.on('set-filters', () => {});
 });
 
+const emitMutation = mutation => {
+	const socketIds = Object.keys(io.sockets.sockets);
+
+	socketIds.forEach(id => {
+		io.sockets.sockets[id].emit('mutation', { x: 123, y: 456, timestamp: new Date().getTime(), socket_id: id });
+	});
+};
+
 module.exports = {
+	emitMutation,
 	/**
 	 * Dynamically loads all routes and applies them to the server object prior to starting the server
 	 */
