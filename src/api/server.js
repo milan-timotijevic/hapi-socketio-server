@@ -2,7 +2,7 @@ const Hapi = require('@hapi/hapi');
 const socketIO = require('socket.io');
 
 const server = new Hapi.Server({
-	port: 3001,
+	port: process.env.PORT || 3001,
 	routes: {
 		cors: {
 			origin: ['*'], // an array of origins or 'ignore'
