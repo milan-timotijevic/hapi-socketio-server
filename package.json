@@ -18,6 +18,6 @@
     "@hapi/joi": "^15.0.3",
     "@hapi/vision": "^5.5.2",
     "hapi-swagger": "^10.0.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
